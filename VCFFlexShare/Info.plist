@@ -8,14 +8,7 @@
         <key>NSExtensionAttributes</key>
         <dict>
             <key>NSExtensionActivationRule</key>
-            <dict>
-                <key>NSExtensionActivationSupportsFileWithMaxCount</key>
-                <integer>1</integer>
-                <key>NSExtensionActivationSupportsText</key>
-                <false/>
-                <key>NSExtensionActivationSupportsWebURLWithMaxCount</key>
-                <integer>0</integer>
-            </dict>
+            <string>SUBQUERY(extensionItems, $item, SUBQUERY($item.attachments, $att, ANY $att.registeredTypeIdentifiers UTI-CONFORMS-TO "public.vcard").@count &gt; 0).@count &gt; 0</string>
         </dict>
         <key>NSExtensionPrincipalClass</key>
         <string>VCFFlexShare.ShareViewController</string>
