@@ -6,9 +6,48 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AA2D1BF42F6891BE00C7FAD2 /* VCFFlexShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AA2D1BE82F6891BE00C7FAD2 /* VCFFlexShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA2D1BF22F6891BE00C7FAD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA2D1BCE2F688E9400C7FAD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA2D1BE72F6891BE00C7FAD2;
+			remoteInfo = VCFFlexShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AA2D1BF92F6891BE00C7FAD2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AA2D1BF42F6891BE00C7FAD2 /* VCFFlexShare.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		AA2D1BD62F688E9500C7FAD2 /* VCFFlex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCFFlex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA2D1BE82F6891BE00C7FAD2 /* VCFFlexShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VCFFlexShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AA2D1BF52F6891BE00C7FAD2 /* Exceptions for "VCFFlexShare" folder in "VCFFlexShare" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = AA2D1BE72F6891BE00C7FAD2 /* VCFFlexShare */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AA2D1BD82F688E9500C7FAD2 /* VCFFlex */ = {
@@ -16,10 +55,25 @@
 			path = VCFFlex;
 			sourceTree = "<group>";
 		};
+		AA2D1BE92F6891BE00C7FAD2 /* VCFFlexShare */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AA2D1BF52F6891BE00C7FAD2 /* Exceptions for "VCFFlexShare" folder in "VCFFlexShare" target */,
+			);
+			path = VCFFlexShare;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AA2D1BD32F688E9400C7FAD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA2D1BE52F6891BE00C7FAD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				AA2D1BD82F688E9500C7FAD2 /* VCFFlex */,
+				AA2D1BE92F6891BE00C7FAD2 /* VCFFlexShare */,
 				AA2D1BD72F688E9500C7FAD2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				AA2D1BD62F688E9500C7FAD2 /* VCFFlex.app */,
+				AA2D1BE82F6891BE00C7FAD2 /* VCFFlexShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,10 +111,12 @@
 				AA2D1BD22F688E9400C7FAD2 /* Sources */,
 				AA2D1BD32F688E9400C7FAD2 /* Frameworks */,
 				AA2D1BD42F688E9400C7FAD2 /* Resources */,
+				AA2D1BF92F6891BE00C7FAD2 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AA2D1BF32F6891BE00C7FAD2 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				AA2D1BD82F688E9500C7FAD2 /* VCFFlex */,
@@ -69,6 +127,28 @@
 			productName = VCFFlex;
 			productReference = AA2D1BD62F688E9500C7FAD2 /* VCFFlex.app */;
 			productType = "com.apple.product-type.application";
+		};
+		AA2D1BE72F6891BE00C7FAD2 /* VCFFlexShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA2D1BF62F6891BE00C7FAD2 /* Build configuration list for PBXNativeTarget "VCFFlexShare" */;
+			buildPhases = (
+				AA2D1BE42F6891BE00C7FAD2 /* Sources */,
+				AA2D1BE52F6891BE00C7FAD2 /* Frameworks */,
+				AA2D1BE62F6891BE00C7FAD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AA2D1BE92F6891BE00C7FAD2 /* VCFFlexShare */,
+			);
+			name = VCFFlexShare;
+			packageProductDependencies = (
+			);
+			productName = VCFFlexShare;
+			productReference = AA2D1BE82F6891BE00C7FAD2 /* VCFFlexShare.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +161,9 @@
 				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					AA2D1BD52F688E9400C7FAD2 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					AA2D1BE72F6891BE00C7FAD2 = {
 						CreatedOnToolsVersion = 26.3;
 					};
 				};
@@ -100,12 +183,20 @@
 			projectRoot = "";
 			targets = (
 				AA2D1BD52F688E9400C7FAD2 /* VCFFlex */,
+				AA2D1BE72F6891BE00C7FAD2 /* VCFFlexShare */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AA2D1BD42F688E9400C7FAD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA2D1BE62F6891BE00C7FAD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +213,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA2D1BE42F6891BE00C7FAD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA2D1BF32F6891BE00C7FAD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA2D1BE72F6891BE00C7FAD2 /* VCFFlexShare */;
+			targetProxy = AA2D1BF22F6891BE00C7FAD2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AA2D1BDF2F688E9500C7FAD2 /* Debug */ = {
@@ -250,6 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VCFFlex/VCFFlex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -282,6 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VCFFlex/VCFFlex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -309,6 +417,68 @@
 			};
 			name = Release;
 		};
+		AA2D1BF72F6891BE00C7FAD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 248M9JWYXJ;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VCFFlexShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VCFFlexShare;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martinrobertfink.VCFFlex.VCFFlexShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AA2D1BF82F6891BE00C7FAD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 248M9JWYXJ;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VCFFlexShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VCFFlexShare;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martinrobertfink.VCFFlex.VCFFlexShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -326,6 +496,15 @@
 			buildConfigurations = (
 				AA2D1BE22F688E9500C7FAD2 /* Debug */,
 				AA2D1BE32F688E9500C7FAD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA2D1BF62F6891BE00C7FAD2 /* Build configuration list for PBXNativeTarget "VCFFlexShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA2D1BF72F6891BE00C7FAD2 /* Debug */,
+				AA2D1BF82F6891BE00C7FAD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
