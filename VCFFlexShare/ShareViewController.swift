@@ -48,12 +48,19 @@ class ShareViewController: NSViewController {
                                 return
                             }
 
-                            if let vcfData = data as? Data, let vcfString = String(data: vcfData, encoding: .utf8) {
+                            var vcfString: String?
+
+                            if let vcfData = data as? Data, let str = String(data: vcfData, encoding: .utf8) {
+                                vcfString = str
+                            } else if let url = data as? URL, let str = try? String(contentsOf: url, encoding: .utf8) {
+                                vcfString = str
+                            } else if let str = data as? String {
+                                vcfString = str
+                            }
+
+                            if let vcfString = vcfString {
                                 self?.shareData.vcfText = vcfString
-                            } else if let url = data as? URL, let vcfString = try? String(contentsOf: url, encoding: .utf8) {
-                                self?.shareData.vcfText = vcfString
-                            } else if let vcfString = data as? String {
-                                self?.shareData.vcfText = vcfString
+                                self?.shareData.fields = VCFParser.parse(vcfString)
                             } else {
                                 self?.shareData.errorMessage = "Unrecognized data format"
                             }
@@ -77,6 +84,7 @@ class ShareViewController: NSViewController {
 
 class ShareData: ObservableObject {
     @Published var vcfText: String?
+    @Published var fields: [VCFField] = []
     @Published var errorMessage: String?
 }
 
@@ -95,6 +103,7 @@ struct ShareExtensionView: View {
                 Text("VCFFlex")
                     .font(.headline)
                 Spacer()
+                // Invisible button for balanced layout
                 Button("Cancel") {}
                     .hidden()
             }
@@ -108,14 +117,25 @@ struct ShareExtensionView: View {
                 Text(errorMessage)
                     .foregroundColor(.red)
                 Spacer()
-            } else if let vcfText = shareData.vcfText {
-                ScrollView {
-                    Text(vcfText)
-                        .font(.system(.body, design: .monospaced))
-                        .textSelection(.enabled)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
+            } else if !shareData.fields.isEmpty {
+                List {
+                    ForEach(shareData.fields.filter { !$0.isStructural }) { field in
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text(field.label)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            Text(field.displayValue)
+                                .font(.body)
+                                .lineLimit(field.property == "PHOTO" ? 1 : 4)
+                        }
+                        .padding(.vertical, 4)
+                    }
                 }
+            } else if shareData.vcfText != nil {
+                Spacer()
+                Text("No parseable fields found")
+                    .foregroundColor(.secondary)
+                Spacer()
             } else {
                 Spacer()
                 ProgressView("Loading contact…")
